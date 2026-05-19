@@ -1,0 +1,42 @@
+{% comment %}
+  VentiSuisse Sticky Add-to-Cart section.
+
+  Render this section on the product template — it adds a mobile-only fixed
+  bar at the bottom of the viewport that mirrors the real ATC button. It
+  observes the primary ATC button via IntersectionObserver and only reveals
+  itself when the real button has scrolled out of view. Clicking the sticky
+  trigger programmatically clicks the real ATC so all of Dawn's product-form
+  logic (variant validation, cart notification, error display) runs as usual.
+{% endcomment %}
+
+{%- if section.settings.enabled and product != blank -%}
+  {% render 'vs-sticky-atc', product: product, section_id: section.id %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "VentiSuisse Sticky ATC",
+  "tag": "section",
+  "class": "section-sticky-atc",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Enable mobile sticky Add-to-Cart bar",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "This section renders a hidden bar that only appears on viewports below 750px wide, once the real ATC button has scrolled off-screen."
+    }
+  ],
+  "presets": [
+    {
+      "name": "VentiSuisse Sticky ATC"
+    }
+  ]
+}
+{% endschema %}

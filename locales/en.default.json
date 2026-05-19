@@ -107,6 +107,11 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
+      "bundle": {
+        "single": "bottle",
+        "pack": "pack",
+        "curated_set": "Or get the curated Sky + Pink set →"
+      },
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
       "description": "Description",
@@ -337,6 +342,9 @@
     },
     "video": {
       "load_video": "Load video: {{ description }}"
+    },
+    "vs_bundle": {
+      "placeholder": "Add this section on a product page to see the bundle picker."
     },
     "slideshow": {
       "load_slide": "Load slide",

@@ -1,0 +1,111 @@
+{% comment %}
+  VentiSuisse quantity-bundle picker.
+
+  Renders two pill buttons that drive the product form's quantity input:
+    1 bottle (qty=1) | 2-pack — save 15% (qty=2)
+
+  The 15% discount itself is applied as a Shopify Automatic Discount
+  (Admin → Discounts → Automatic → Buy 2 of [VentiSuisse Bottle] get 15% off).
+  This widget only sets quantity; checkout math is server-side.
+
+  A small secondary link points to the curated 2-color bundle product (a
+  separate SKU created via Shopify Bundles app), if `bundle_product` is set
+  in the block settings.
+
+  Accepts:
+  - product_form_id:  {String} id of the product form (matches Dawn convention)
+  - section_id:       {String} id of the parent section
+  - product:          {Object} the current product
+  - bundle_url:       {String} optional URL to a curated 2-color bundle product
+  - single_price:     {Money}  display price for 1 unit
+  - pack_price:       {Money}  display price for 2 units after the 15% discount
+  - discount_label:   {String} short save label, e.g. "−15%"
+
+  Usage:
+    {% render 'vs-quantity-bundle-picker',
+        product_form_id: product_form_id,
+        section_id: section.id,
+        product: product,
+        bundle_url: section.settings.bundle_url,
+        single_price: product.selected_or_first_available_variant.price,
+        pack_price: pack_price,
+        discount_label: '−15%'
+    %}
+{% endcomment %}
+
+{%- liquid
+  assign single_money = single_price | money
+  assign pack_money = pack_price | money
+-%}
+
+<vs-bundle-picker
+  class="vs-bundle-picker-wrapper"
+  data-section-id="{{ section_id }}"
+  data-form-id="{{ product_form_id }}"
+>
+  <div
+    class="vs-bundle-picker"
+    role="radiogroup"
+    aria-label="{{ 'products.product.quantity.label' | t | default: 'Quantity' }}"
+  >
+    <button
+      type="button"
+      class="vs-bundle-pill"
+      data-qty="1"
+      aria-pressed="true"
+    >
+      <span class="vs-bundle-pill__qty">1× {{ 'products.product.bundle.single' | t | default: 'bottle' }}</span>
+      <span class="vs-bundle-pill__price">{{ single_money }}</span>
+    </button>
+
+    <button
+      type="button"
+      class="vs-bundle-pill"
+      data-qty="2"
+      aria-pressed="false"
+    >
+      <span class="vs-bundle-pill__qty">2× {{ 'products.product.bundle.pack' | t | default: 'pack' }}</span>
+      <span class="vs-bundle-pill__price">{{ pack_money }}</span>
+      <span class="vs-bundle-pill__save">{{ discount_label }}</span>
+    </button>
+  </div>
+
+  {%- if bundle_url != blank -%}
+    <a class="vs-bundle-picker__cross" href="{{ bundle_url }}">
+      {{ 'products.product.bundle.curated_set' | t | default: 'Or get the curated Sky + Pink set →' }}
+    </a>
+  {%- endif -%}
+</vs-bundle-picker>
+
+<script>
+  if (!customElements.get('vs-bundle-picker')) {
+    customElements.define(
+      'vs-bundle-picker',
+      class extends HTMLElement {
+        constructor() {
+          super();
+          this.pills = this.querySelectorAll('.vs-bundle-pill');
+          this.formId = this.dataset.formId;
+          this.pills.forEach((pill) => pill.addEventListener('click', this.onSelect.bind(this)));
+        }
+
+        onSelect(event) {
+          const pill = event.currentTarget;
+          const qty = parseInt(pill.dataset.qty, 10);
+
+          this.pills.forEach((p) => p.setAttribute('aria-pressed', p === pill ? 'true' : 'false'));
+
+          const form =
+            (this.formId && document.getElementById(this.formId)) ||
+            document.querySelector('form[data-type="add-to-cart-form"]');
+          if (!form) return;
+          const qtyInput = form.querySelector('input[name="quantity"]');
+          if (!qtyInput) return;
+
+          qtyInput.value = qty;
+          qtyInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+    );
+  }
+</script>

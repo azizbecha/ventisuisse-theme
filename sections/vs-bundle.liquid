@@ -1,0 +1,128 @@
+{% comment %}
+  VentiSuisse Bundle Picker section.
+
+  Renders the quantity-bundle pill picker on the product page (or wherever
+  added via the theme editor). Computes the pack price from the current
+  variant + the configured discount percentage. The actual checkout discount
+  is applied by a Shopify Automatic Discount, not by this section — this UI
+  just communicates the price advantage and sets the cart quantity.
+{% endcomment %}
+
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign single_price = variant.price
+  assign discount_pct = section.settings.discount_percent | default: 15
+  assign multiplier = 100 | minus: discount_pct
+  assign pack_subtotal = single_price | times: 2
+  assign pack_price = pack_subtotal | times: multiplier | divided_by: 100
+  assign discount_label = '−' | append: discount_pct | append: '%'
+-%}
+
+<section
+  class="vs-bundle-section color-{{ section.settings.color_scheme }} gradient"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="vs-bundle-section__heading h3">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if product != blank -%}
+      {% render 'vs-quantity-bundle-picker',
+        product_form_id: '',
+        section_id: section.id,
+        product: product,
+        bundle_url: section.settings.bundle_url,
+        single_price: single_price,
+        pack_price: pack_price,
+        discount_label: discount_label
+      %}
+    {%- else -%}
+      <p>{{ 'sections.vs_bundle.placeholder' | t | default: 'Add this section on a product page to see the bundle picker.' }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .vs-bundle-section .vs-bundle-section__heading {
+    margin: 0 0 1rem;
+  }
+  .vs-bundle-picker-wrapper {
+    max-width: 480px;
+  }
+  .vs-bundle-picker__cross {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: rgb(var(--color-foreground));
+  }
+</style>
+
+{% schema %}
+{
+  "name": "VentiSuisse Bundle Picker",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pick your pack"
+    },
+    {
+      "type": "range",
+      "id": "discount_percent",
+      "label": "2-pack discount %",
+      "info": "Set this to match your Shopify Automatic Discount value.",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 15,
+      "unit": "%"
+    },
+    {
+      "type": "url",
+      "id": "bundle_url",
+      "label": "Curated 2-color bundle URL",
+      "info": "Optional. If set, a link to the bundle product appears under the picker."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "VentiSuisse Bundle Picker"
+    }
+  ]
+}
+{% endschema %}
