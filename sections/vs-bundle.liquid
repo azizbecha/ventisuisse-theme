@@ -8,16 +8,6 @@
   just communicates the price advantage and sets the cart quantity.
 {% endcomment %}
 
-{%- liquid
-  assign variant = product.selected_or_first_available_variant
-  assign single_price = variant.price
-  assign discount_pct = section.settings.discount_percent | default: 15
-  assign multiplier = 100 | minus: discount_pct
-  assign pack_subtotal = single_price | times: 2
-  assign pack_price = pack_subtotal | times: multiplier | divided_by: 100
-  assign discount_label = '−' | append: discount_pct | append: '%'
--%}
-
 <section
   class="vs-bundle-section color-{{ section.settings.color_scheme }} gradient"
   style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
@@ -29,16 +19,13 @@
 
     {%- if product != blank -%}
       {% render 'vs-quantity-bundle-picker',
-        product_form_id: '',
-        section_id: section.id,
         product: product,
-        bundle_url: section.settings.bundle_url,
-        single_price: single_price,
-        pack_price: pack_price,
-        discount_label: discount_label
+        section_id: section.id,
+        discount_percent: section.settings.discount_percent,
+        bundle_url: section.settings.bundle_url
       %}
     {%- else -%}
-      <p>{{ 'sections.vs_bundle.placeholder' | t | default: 'Add this section on a product page to see the bundle picker.' }}</p>
+      <p>{{ 'sections.vs_bundle.placeholder' | t }}</p>
     {%- endif -%}
   </div>
 </section>

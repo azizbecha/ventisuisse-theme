@@ -2,40 +2,32 @@
   VentiSuisse quantity-bundle picker.
 
   Renders two pill buttons that drive the product form's quantity input:
-    1 bottle (qty=1) | 2-pack — save 15% (qty=2)
+    1 bottle (qty=1) | 2-pack — save N% (qty=2)
 
-  The 15% discount itself is applied as a Shopify Automatic Discount
-  (Admin → Discounts → Automatic → Buy 2 of [VentiSuisse Bottle] get 15% off).
+  The N% discount itself is applied as a Shopify Automatic Discount
+  (Admin → Discounts → Automatic → Buy 2 of [VentiSuisse Bottle] get N% off).
   This widget only sets quantity; checkout math is server-side.
 
-  A small secondary link points to the curated 2-color bundle product (a
-  separate SKU created via Shopify Bundles app), if `bundle_product` is set
-  in the block settings.
-
   Accepts:
-  - product_form_id:  {String} id of the product form (matches Dawn convention)
-  - section_id:       {String} id of the parent section
-  - product:          {Object} the current product
+  - product:          {Object} the current product (required)
+  - discount_percent: {Number} discount % for 2-pack (optional, default 15)
   - bundle_url:       {String} optional URL to a curated 2-color bundle product
-  - single_price:     {Money}  display price for 1 unit
-  - pack_price:       {Money}  display price for 2 units after the 15% discount
-  - discount_label:   {String} short save label, e.g. "−15%"
+  - product_form_id:  {String} id of the product form (optional, falls back via DOM lookup)
+  - section_id:       {String} id of the parent section (optional, for HTML anchoring)
 
   Usage:
-    {% render 'vs-quantity-bundle-picker',
-        product_form_id: product_form_id,
-        section_id: section.id,
-        product: product,
-        bundle_url: section.settings.bundle_url,
-        single_price: product.selected_or_first_available_variant.price,
-        pack_price: pack_price,
-        discount_label: '−15%'
-    %}
+    {% render 'vs-quantity-bundle-picker', product: product %}
+    {% render 'vs-quantity-bundle-picker', product: product, discount_percent: 20, bundle_url: '/products/two-color-set' %}
 {% endcomment %}
 
 {%- liquid
-  assign single_money = single_price | money
-  assign pack_money = pack_price | money
+  assign discount_pct = discount_percent | default: 15
+  assign single_price_cents = product.selected_or_first_available_variant.price
+  assign pack_multiplier = 100 | minus: discount_pct | times: 2
+  assign pack_price_cents = single_price_cents | times: pack_multiplier | divided_by: 100
+  assign single_money = single_price_cents | money
+  assign pack_money = pack_price_cents | money
+  assign discount_label = '−' | append: discount_pct | append: '%'
 -%}
 
 <vs-bundle-picker

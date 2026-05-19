@@ -1,31 +1,31 @@
 {
   "sections": {
-    "image_banner": {
+    "hero": {
       "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Swiss trail hydration<br>for dogs.",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "A leak-proof insulated bottle with a built-in silicone bowl. 285 ml of cool water for your pup — anywhere the trail goes.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Shop the bottle",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_1": false,
+            "button_label_2": "How it works",
+            "button_link_2": "#how-it-works",
+            "button_style_secondary_2": true
           }
         }
       },
@@ -35,176 +35,247 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 30,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-2",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "how-it-works": {
+      "type": "multicolumn",
+      "blocks": {
+        "step-1": {
+          "type": "column",
+          "settings": {
+            "title": "1. Carry",
+            "text": "<p>Lightweight 150 g body. Clips to a pack, drops into a pocket.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "step-2": {
+          "type": "column",
+          "settings": {
+            "title": "2. Flip",
+            "text": "<p>Pop the silicone panel up — instant bowl, ready for your pup.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "step-3": {
+          "type": "column",
+          "settings": {
+            "title": "3. Drink",
+            "text": "<p>Pour the cool, insulated water and let your dog hydrate trail-side.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3"
+      ],
+      "settings": {
+        "title": "How it works.",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": true,
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons"
+      ],
+      "settings": {
+        "product": "",
+        "secondary_background": false,
+        "color_scheme": "scheme-1",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "blocks": {
+        "story-heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why VentiSuisse?",
+            "heading_size": "h1"
+          }
+        },
+        "story-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Walks shouldn't end early because the water ran out. We built one bottle that solves both — hydration for you, hydration for your dog — and made it the lightweight, leak-proof, Swiss-clean shape it always should have been.</p>",
+            "text_style": "body"
+          }
+        },
+        "story-button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read our story",
+            "button_link": "shopify://pages/about"
+          }
+        }
+      },
+      "block_order": [
+        "story-heading",
+        "story-text",
+        "story-button"
+      ],
+      "settings": {
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "reviews": {
+      "type": "multicolumn",
+      "blocks": {
+        "review-1": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★",
+            "text": "<p>“Finally a bottle that works for both of us. My border collie figured out the bowl in 10 seconds.”</p><p><small>— Lena, Bern</small></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "review-2": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★",
+            "text": "<p>“Lighter than the Yeti, half the bag-space. Goes everywhere with us.”</p><p><small>— Marco, Lugano</small></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "review-3": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★",
+            "text": "<p>“Pink one looks ridiculous and I love it. Doesn't leak. Survived a 4-day hike.”</p><p><small>— Sophie, Lausanne</small></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "review-1",
+        "review-2",
+        "review-3"
+      ],
+      "settings": {
+        "title": "From the trail.",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": true,
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "heading": "Trail-tested drops, only when we have something to say.",
+            "heading_size": "h2"
           }
         },
-        "text": {
-          "type": "text",
+        "paragraph": {
+          "type": "paragraph",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>New colorways, restock alerts, occasional trail photography. No spam — promise.</p>"
           }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
         }
       },
       "block_order": [
         "heading",
-        "text"
+        "paragraph",
+        "email_form"
       ],
       "settings": {
         "color_scheme": "scheme-1",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero",
+    "how-it-works",
+    "featured-product",
+    "story",
+    "reviews",
+    "newsletter"
   ]
 }
