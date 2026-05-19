@@ -108,6 +108,11 @@
   "products": {
     "product": {
       "add_to_cart": "Ajouter au panier",
+      "bundle": {
+        "single": "bouteille",
+        "pack": "pack de 2",
+        "curated_set": "Ou le set Sky + Pink →"
+      },
       "description": "Description",
       "on_sale": "Promotion",
       "product_variants": "Variantes de produits",
@@ -385,6 +390,9 @@
       "min_error": "Cet article a un minimum de {{ min }}",
       "max_error": "Cet article a un maximum de {{ max }}",
       "step_error": "Vous pouvez ajouter cet article uniquement par incréments de {{ step }}"
+    },
+    "vs_bundle": {
+      "placeholder": "Ajoutez cette section sur une page produit pour voir le sélecteur de pack."
     }
   },
   "localization": {

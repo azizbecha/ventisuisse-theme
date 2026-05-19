@@ -107,6 +107,11 @@
   "products": {
     "product": {
       "add_to_cart": "In den Warenkorb legen",
+      "bundle": {
+        "single": "Flasche",
+        "pack": "2er-Pack",
+        "curated_set": "Oder das Sky + Pink 2er-Set →"
+      },
       "description": "Beschreibung",
       "on_sale": "Sale",
       "quantity": {
@@ -329,6 +334,9 @@
     },
     "video": {
       "load_video": "Video laden: {{ description }}"
+    },
+    "vs_bundle": {
+      "placeholder": "Fügen Sie diesen Abschnitt auf einer Produktseite ein, um die Pack-Auswahl anzuzeigen."
     },
     "slideshow": {
       "load_slide": "Folie laden",
