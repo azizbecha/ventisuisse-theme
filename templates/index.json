@@ -6,7 +6,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Swiss trail hydration<br>for dogs.",
+            "heading": "Swiss trail hydration for dogs.",
             "heading_size": "h0"
           }
         },
@@ -190,7 +190,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>“Finally a bottle that works for both of us. My border collie figured out the bowl in 10 seconds.”</p><p><small>— Lena, Bern</small></p>",
+            "text": "<p>“Finally a bottle that works for both of us. My border collie figured out the bowl in 10 seconds.”</p><p><em>— Lena, Bern</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -199,7 +199,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>“Lighter than the Yeti, half the bag-space. Goes everywhere with us.”</p><p><small>— Marco, Lugano</small></p>",
+            "text": "<p>“Lighter than the Yeti, half the bag-space. Goes everywhere with us.”</p><p><em>— Marco, Lugano</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -208,7 +208,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>“Pink one looks ridiculous and I love it. Doesn't leak. Survived a 4-day hike.”</p><p><small>— Sophie, Lausanne</small></p>",
+            "text": "<p>“Pink one looks ridiculous and I love it. Doesn't leak. Survived a 4-day hike.”</p><p><em>— Sophie, Lausanne</em></p>",
             "link_label": "",
             "link": ""
           }
