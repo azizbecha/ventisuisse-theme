@@ -3595,3 +3595,173 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* ---------------------------------------------------------- */
+/* VentiSuisse overrides — kept at the END so we don't fight  */
+/* Dawn's cascade. Prefixed `.vs-*` to avoid name collisions. */
+/* ---------------------------------------------------------- */
+
+.vs-eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+/* Inter has different vertical metrics from Assistant — tighten heading line-height */
+h1, h2, h3, .h0, .h1, .h2, .h3 {
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Stronger focus ring for keyboard nav (a11y) */
+*:focus-visible {
+  outline: 2px solid rgb(var(--color-foreground));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Color-swatch variant picker (used by snippets/product-variant-picker.liquid override) */
+.vs-color-swatches {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.vs-color-swatch {
+  --vs-swatch-size: 2.5rem;
+  width: var(--vs-swatch-size);
+  height: var(--vs-swatch-size);
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid rgba(var(--color-foreground), 0.15);
+  background-clip: padding-box;
+  transition: transform 120ms ease;
+}
+
+.vs-color-swatch:hover {
+  transform: scale(1.08);
+}
+
+.vs-color-swatch[aria-checked='true'] {
+  box-shadow: 0 0 0 2px rgb(var(--color-background)), 0 0 0 4px rgb(var(--color-foreground));
+}
+
+.vs-color-swatch--sky-blue { background-color: #A8D0F0; }
+.vs-color-swatch--pink { background-color: #F6A6B5; }
+
+/* Quantity-bundle pill picker */
+.vs-bundle-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.vs-bundle-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 0.5rem;
+  border: 1.5px solid rgba(var(--color-foreground), 0.15);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  font-family: inherit;
+  color: rgb(var(--color-foreground));
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.vs-bundle-pill:hover {
+  border-color: rgba(var(--color-foreground), 0.45);
+}
+
+.vs-bundle-pill[aria-pressed='true'] {
+  border-color: rgb(var(--color-foreground));
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.vs-bundle-pill__qty {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.vs-bundle-pill__price {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+.vs-bundle-pill__save {
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #E85A4F;
+  margin-top: 0.35rem;
+}
+
+/* Mobile sticky ATC (used by sections/vs-sticky-atc.liquid) */
+.vs-sticky-atc {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  background: rgb(var(--color-background));
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(100%);
+  transition: transform 220ms ease;
+  display: none;
+}
+
+.vs-sticky-atc.is-visible {
+  transform: translateY(0);
+}
+
+.vs-sticky-atc__inner {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.vs-sticky-atc__price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.vs-sticky-atc__button {
+  flex: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .vs-sticky-atc {
+    display: block;
+  }
+}
+
+/* USP / feature grid icons — keep them inheriting from Dawn's multicolumn */
+.vs-feature-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 0.75rem;
+  color: rgb(var(--color-foreground));
+}
+
+/* Trust strip — used on PDP and homepage via multicolumn */
+.vs-trust-strip {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
