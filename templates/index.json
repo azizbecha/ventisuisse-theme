@@ -3,7 +3,7 @@
     "hero": {
       "type": "vs-hero",
       "settings": {
-        "background_type": "video",
+        "background_type": "image",
         "video_asset": "vs-hero-video.mp4",
         "video_poster_asset": "vs-hero-video-poster.jpg",
         "image_asset": "vs-hero-corgi.jpg",
@@ -358,9 +358,9 @@
   "order": [
     "hero",
     "features",
+    "featured-product",
     "how-it-works",
     "story-folding",
-    "featured-product",
     "story-variants",
     "faq",
     "reviews",

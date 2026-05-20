@@ -3765,3 +3765,18 @@ h1, h2, h3, .h0, .h1, .h2, .h3 {
   letter-spacing: 0.02em;
   font-weight: 500;
 }
+
+/* Green "buy" CTAs — highlight purchase actions vs. other buttons.
+   Override Dawn's per-button color vars so we work WITH its button
+   system instead of fighting the ::after border/background layers. */
+.product-form__submit,
+.vs-sticky-atc__button,
+.vs-hero .button--primary {
+  --color-button: 22, 163, 74;
+  --color-button-text: 255, 255, 255;
+}
+.product-form__submit:hover,
+.vs-sticky-atc__button:hover,
+.vs-hero .button--primary:hover {
+  --color-button: 21, 128, 61;
+}
