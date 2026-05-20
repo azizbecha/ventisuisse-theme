@@ -1,49 +1,20 @@
 {
   "sections": {
     "hero": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Swiss trail hydration for dogs.",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "A leak-proof insulated bottle with a built-in silicone bowl. 285 ml of cool water for your pup — anywhere the trail goes.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop the bottle",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "How it works",
-            "button_link_2": "#how-it-works",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "type": "vs-hero",
       "settings": {
-        "image_overlay_opacity": 30,
-        "image_height": "large",
-        "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "scheme-2",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "image_asset": "vs-hero-corgi.jpg",
+        "image_alt": "A corgi drinks from the VentiSuisse trail-flask's flip-out silicone bowl",
+        "eyebrow": "Schweizer trail-hydration",
+        "heading": "Eine Flasche. Ein Napf. Endlose Wege.",
+        "subhead": "Auslaufsicher, isoliert, 285 ml. Mit ausklappbarem Silikon-Napf, damit dein Hund unterwegs trinken kann — wo der Weg auch hinführt.",
+        "button_label_1": "Jetzt kaufen",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "So funktioniert's",
+        "button_link_2": "#how-it-works",
+        "content_alignment": "bottom-left",
+        "overlay_opacity": 40,
+        "color_scheme": "scheme-2"
       }
     },
     "how-it-works": {
@@ -52,8 +23,8 @@
         "step-1": {
           "type": "column",
           "settings": {
-            "title": "1. Carry",
-            "text": "<p>Lightweight 150 g body. Clips to a pack, drops into a pocket.</p>",
+            "title": "1. Tragen",
+            "text": "<p>Leichte 150 g, kompakte 9 × 9 cm. Karabiner am Rucksack, in der Hand, in der Tasche.</p>",
             "link_label": "",
             "link": ""
           }
@@ -61,8 +32,8 @@
         "step-2": {
           "type": "column",
           "settings": {
-            "title": "2. Flip",
-            "text": "<p>Pop the silicone panel up — instant bowl, ready for your pup.</p>",
+            "title": "2. Öffnen",
+            "text": "<p>Daumendruck am Silikonpanel — und der eingebaute Trinknapf klappt nach unten.</p>",
             "link_label": "",
             "link": ""
           }
@@ -70,8 +41,8 @@
         "step-3": {
           "type": "column",
           "settings": {
-            "title": "3. Drink",
-            "text": "<p>Pour the cool, insulated water and let your dog hydrate trail-side.</p>",
+            "title": "3. Trinken",
+            "text": "<p>Wasser rein, dein Hund trinkt. Dann zurückklappen — wieder auslaufsicher.</p>",
             "link_label": "",
             "link": ""
           }
@@ -83,7 +54,7 @@
         "step-3"
       ],
       "settings": {
-        "title": "How it works.",
+        "title": "So funktioniert's.",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -97,6 +68,22 @@
         "columns_mobile": "1",
         "padding_top": 56,
         "padding_bottom": 56
+      }
+    },
+    "story-folding": {
+      "type": "vs-story",
+      "settings": {
+        "image_asset": "vs-product-folding.jpg",
+        "image_alt": "Hand öffnet das ausklappbare Silikonpanel des VentiSuisse-Flachons",
+        "layout": "image-left",
+        "eyebrow": "Bowl on demand",
+        "heading": "Eine Bewegung — und der Napf ist da.",
+        "body": "<p>Das flexible Silikonpanel an der Seite der Flasche klappt mit einem Daumendruck nach unten. Wasser rein, dein Hund trinkt. Wenn ihr fertig seid, klappst du es zurück — die Flasche ist wieder dicht.</p><p>Keine zweite Flasche. Keine Klappschüssel. Keine triefenden Hände.</p>",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "featured-product": {
@@ -140,47 +127,20 @@
         "padding_bottom": 56
       }
     },
-    "story": {
-      "type": "image-with-text",
-      "blocks": {
-        "story-heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Why VentiSuisse?",
-            "heading_size": "h1"
-          }
-        },
-        "story-text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Walks shouldn't end early because the water ran out. We built one bottle that solves both — hydration for you, hydration for your dog — and made it the lightweight, leak-proof, Swiss-clean shape it always should have been.</p>",
-            "text_style": "body"
-          }
-        },
-        "story-button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Read our story",
-            "button_link": "shopify://pages/about"
-          }
-        }
-      },
-      "block_order": [
-        "story-heading",
-        "story-text",
-        "story-button"
-      ],
+    "story-variants": {
+      "type": "vs-story",
       "settings": {
-        "height": "large",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "image_asset": "vs-product-variants.jpg",
+        "image_alt": "Vier Farb- und Musterversionen des VentiSuisse-Flachons",
+        "layout": "image-right",
+        "eyebrow": "Vier Stile",
+        "heading": "Solid, gemustert, immer Schweizer.",
+        "body": "<p>Sky Blue und Pink in den unifarbenen Versionen. Limitierte Bow-Tie-Muster für die, die's etwas verspielter mögen. Alle Versionen: gleiche 285 ml, gleicher Edelstahl-Innenraum, gleiches dichtes Flip-Top.</p>",
+        "button_label": "",
+        "button_link": "",
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "reviews": {
@@ -190,7 +150,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>“Finally a bottle that works for both of us. My border collie figured out the bowl in 10 seconds.”</p><p><em>— Lena, Bern</em></p>",
+            "text": "<p>„Endlich eine Flasche, die für uns beide funktioniert. Mein Border Collie hat den Napf in 10 Sekunden begriffen.\"</p><p><em>— Lena, Bern</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -199,7 +159,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>“Lighter than the Yeti, half the bag-space. Goes everywhere with us.”</p><p><em>— Marco, Lugano</em></p>",
+            "text": "<p>„Leichter als die Yeti, halb der Platzbedarf. Geht überall mit.\"</p><p><em>— Marco, Lugano</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -208,7 +168,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>“Pink one looks ridiculous and I love it. Doesn't leak. Survived a 4-day hike.”</p><p><em>— Sophie, Lausanne</em></p>",
+            "text": "<p>„Die pinke sieht lächerlich aus und ich liebe sie. Tropft nicht. Vier-Tage-Hike überstanden.\"</p><p><em>— Sophie, Lausanne</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -220,7 +180,7 @@
         "review-3"
       ],
       "settings": {
-        "title": "From the trail.",
+        "title": "Von der Tour.",
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -242,14 +202,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Trail-tested drops, only when we have something to say.",
+            "heading": "Trail-getestete Updates, nur wenn wir etwas zu sagen haben.",
             "heading_size": "h2"
           }
         },
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>New colorways, restock alerts, occasional trail photography. No spam — promise.</p>"
+            "text": "<p>Neue Farben, Restock-Alarm, gelegentliche Trail-Fotos. Kein Spam — versprochen.</p>"
           }
         },
         "email_form": {
@@ -273,8 +233,9 @@
   "order": [
     "hero",
     "how-it-works",
+    "story-folding",
     "featured-product",
-    "story",
+    "story-variants",
     "reviews",
     "newsletter"
   ]
