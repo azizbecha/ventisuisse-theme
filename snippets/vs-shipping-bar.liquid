@@ -1,0 +1,94 @@
+{% comment %}
+  VentiSuisse free-shipping progress bar.
+
+  Renders inside cart drawer + cart page. Because Dawn re-renders the whole
+  #CartDrawer (and the cart page section) via the Section Rendering API on
+  every cart change, this server-rendered bar updates automatically — no
+  custom JS needed.
+
+  Reads:
+  - settings.free_shipping_bar_enabled (checkbox)
+  - settings.free_shipping_threshold (number, in store currency units)
+  - cart.total_price (cents)
+
+  Usage: {% render 'vs-shipping-bar' %}
+{% endcomment %}
+
+{%- liquid
+  if settings.free_shipping_bar_enabled == false
+    break
+  endif
+
+  assign threshold_cents = settings.free_shipping_threshold | times: 100
+  if threshold_cents <= 0
+    break
+  endif
+
+  assign current = cart.total_price
+  assign remaining = threshold_cents | minus: current
+
+  assign pct = current | times: 100 | divided_by: threshold_cents
+  if pct > 100
+    assign pct = 100
+  endif
+-%}
+
+{%- if cart != empty -%}
+  <div class="vs-shipping-bar" role="status" aria-live="polite">
+    <p class="vs-shipping-bar__label">
+      {%- if remaining > 0 -%}
+        {%- assign remaining_money = remaining | money -%}
+        {{ 'sections.cart.free_shipping_progress' | t: amount: remaining_money }}
+      {%- else -%}
+        <span class="vs-shipping-bar__check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg>
+        </span>
+        {{ 'sections.cart.free_shipping_unlocked' | t }}
+      {%- endif -%}
+    </p>
+    <div class="vs-shipping-bar__track">
+      <div class="vs-shipping-bar__fill{% if remaining <= 0 %} is-complete{% endif %}" style="width: {{ pct }}%;"></div>
+    </div>
+  </div>
+
+  <style>
+    .vs-shipping-bar {
+      padding: 1rem 1.25rem 1.1rem;
+      border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+    }
+    .vs-shipping-bar__label {
+      margin: 0 0 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.35;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .vs-shipping-bar__track {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(var(--color-foreground), 0.12);
+      overflow: hidden;
+    }
+    .vs-shipping-bar__fill {
+      height: 100%;
+      border-radius: 999px;
+      background: rgb(var(--color-foreground));
+      transition: width 320ms ease;
+    }
+    .vs-shipping-bar__fill.is-complete {
+      background: #2e9e5b;
+    }
+    .vs-shipping-bar__check {
+      display: inline-flex;
+      width: 18px;
+      height: 18px;
+      color: #2e9e5b;
+    }
+    .vs-shipping-bar__check svg {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+{%- endif -%}
