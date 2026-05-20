@@ -5,19 +5,55 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
+        "announcement-shipping": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Livraison gratuite en Suisse dès CHF 49",
             "text_alignment": "center",
-            "color_scheme": "scheme-1",
+            "color_scheme": "scheme-2",
+            "link": ""
+          }
+        },
+        "announcement-bundle": {
+          "type": "announcement",
+          "settings": {
+            "text": "Pack de 2 → économisez 15%",
+            "text_alignment": "center",
+            "color_scheme": "scheme-2",
+            "link": "shopify://collections/all"
+          }
+        },
+        "announcement-returns": {
+          "type": "announcement",
+          "settings": {
+            "text": "Retours sous 30 jours, sans question",
+            "text_alignment": "center",
+            "color_scheme": "scheme-2",
+            "link": ""
+          }
+        },
+        "announcement-delivery": {
+          "type": "announcement",
+          "settings": {
+            "text": "Expédié sous 1–3 jours ouvrables",
+            "text_alignment": "center",
+            "color_scheme": "scheme-2",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
-      ]
+        "announcement-shipping",
+        "announcement-bundle",
+        "announcement-returns",
+        "announcement-delivery"
+      ],
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 4,
+        "color_scheme": "scheme-2",
+        "show_line_separator": false
+      }
     },
     "header": {
       "type": "header",
