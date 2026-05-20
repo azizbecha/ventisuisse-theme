@@ -178,36 +178,17 @@
       }
     },
     "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Pour les journées dans les Alpes.",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-body": {
-          "type": "text",
-          "settings": {
-            "text": "<p>De l'eau fraîche pour la montée. Un bol quand votre chien en a besoin. Conçue en Suisse pour la vie sur les sentiers — et le footing au parc aussi.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-heading",
-        "image-with-text-body"
-      ],
+      "type": "vs-story",
       "settings": {
-        "height": "medium",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "image_asset": "vs-product-folding.jpg",
+        "image_alt": "La gourde VentiSuisse avec son panneau en silicone ouvert formant un bol",
+        "layout": "image-right",
+        "eyebrow": "Conçue en Suisse",
+        "heading": "Pour les journées dans les Alpes.",
+        "body": "<p>De l'eau fraîche pour la montée. Un bol quand votre chien en a besoin. Pensée pour la vie sur les sentiers — et le footing au parc aussi.</p>",
+        "button_label": "",
+        "button_link": "",
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
