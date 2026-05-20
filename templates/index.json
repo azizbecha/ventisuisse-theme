@@ -4,8 +4,8 @@
       "type": "vs-hero",
       "settings": {
         "background_type": "video",
-        "video_asset": "vs-hero-montage.mp4",
-        "video_poster_asset": "vs-hero-montage-poster.jpg",
+        "video_asset": "vs-hero-video.mp4",
+        "video_poster_asset": "vs-hero-video-poster.jpg",
         "image_asset": "vs-hero-corgi.jpg",
         "image_alt": "Un chien boit dans le bol en silicone intégré à la gourde VentiSuisse",
         "eyebrow": "Hydration de trail suisse",
