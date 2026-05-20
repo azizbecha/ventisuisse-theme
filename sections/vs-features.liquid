@@ -1,0 +1,213 @@
+{% comment %}
+  VentiSuisse Features — 4-up attribute grid with inline SVG icons.
+  Different from "How it works" (which is action-based / Porter-Ouvrir-Boire).
+  This one is attribute-based: what makes the product worth buying.
+
+  Each block lets the merchant choose an icon from a curated set + a heading
+  + a short body. Icons live inline as SVGs (no extra HTTP requests, no
+  dependency on uploaded images).
+{% endcomment %}
+
+<section
+  class="vs-features color-{{ section.settings.color_scheme }} gradient"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    {%- if section.settings.heading != blank or section.settings.eyebrow != blank -%}
+      <div class="vs-features__intro">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="vs-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="vs-features__heading h1">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <ul class="vs-features__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="vs-features__item" {{ block.shopify_attributes }}>
+          <span class="vs-features__icon" aria-hidden="true">
+            {%- case block.settings.icon -%}
+              {%- when 'drop' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 5 6 8 6 12a6 6 0 1 1-12 0c0-4 3-7 6-12z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg>
+              {%- when 'thermometer' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V5a2 2 0 1 0-4 0v9.76a4 4 0 1 0 4 0z"/><line x1="12" y1="9" x2="12" y2="15"/></svg>
+              {%- when 'shield' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><polyline points="9 12 11 14 15 10"/></svg>
+              {%- when 'feather' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+              {%- when 'bowl' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v2a8 8 0 0 1-16 0v-2z"/><path d="M7 7c0-2 2-3 5-3s5 1 5 3"/></svg>
+              {%- when 'paw' -%}
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="1.6"/><circle cx="10" cy="6" r="1.6"/><circle cx="14" cy="6" r="1.6"/><circle cx="18" cy="10" r="1.6"/><path d="M12 11c-3 0-6 3-6 6 0 1.7 1.3 3 3 3 1 0 1.5-.5 3-.5s2 .5 3 .5c1.7 0 3-1.3 3-3 0-3-3-6-6-6z"/></svg>
+              {%- when 'mountain' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 19 9 9 13 14 16 10 21 19"/><circle cx="17" cy="6" r="1.5"/></svg>
+              {%- when 'check' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg>
+            {%- endcase -%}
+          </span>
+          {%- if block.settings.heading != blank -%}
+            <h3 class="vs-features__item-heading">{{ block.settings.heading | escape }}</h3>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <p class="vs-features__item-body">{{ block.settings.body }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .vs-features__intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+  }
+  .vs-features__heading {
+    margin: 0;
+    line-height: 1.1;
+  }
+  .vs-features__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.25rem;
+  }
+  @media screen and (min-width: 750px) {
+    .vs-features__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem 2rem;
+    }
+  }
+  .vs-features__item {
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .vs-features__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    background: rgba(var(--color-foreground), 0.06);
+    color: rgb(var(--color-foreground));
+    margin-bottom: 0.9rem;
+  }
+  .vs-features__icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  .vs-features__item-heading {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+  .vs-features__item-body {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    opacity: 0.78;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "VentiSuisse Features",
+  "tag": "section",
+  "class": "section-vs-features",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Pourquoi cette gourde"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Quatre choses qui font la différence."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "drop", "label": "Water drop (étanche)" },
+            { "value": "thermometer", "label": "Thermometer (isotherme)" },
+            { "value": "shield", "label": "Shield (food-grade)" },
+            { "value": "feather", "label": "Feather (léger)" },
+            { "value": "bowl", "label": "Bowl (bol intégré)" },
+            { "value": "paw", "label": "Paw (pet)" },
+            { "value": "mountain", "label": "Mountain (trail)" },
+            { "value": "check", "label": "Check mark" }
+          ],
+          "default": "drop"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Feature"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body",
+          "default": "Short body copy describing the feature."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "VentiSuisse Features",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "drop", "heading": "Étanche", "body": "Bouchon hermétique. Glissez-la dans n'importe quel sac." } },
+        { "type": "feature", "settings": { "icon": "thermometer", "heading": "Isotherme double paroi", "body": "L'eau reste fraîche, même après des heures au soleil." } },
+        { "type": "feature", "settings": { "icon": "shield", "heading": "Qualité alimentaire", "body": "Inox 304 à l'intérieur, silicone sans BPA pour le bol." } },
+        { "type": "feature", "settings": { "icon": "feather", "heading": "150 g, 285 ml", "body": "Légère pour le trail. Compacte pour la poche." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
