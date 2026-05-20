@@ -7,13 +7,13 @@
         "video_asset": "vs-hero-video.mp4",
         "video_poster_asset": "vs-hero-video-poster.jpg",
         "image_asset": "vs-hero-corgi.jpg",
-        "image_alt": "A corgi drinks from the VentiSuisse trail-flask's flip-out silicone bowl",
-        "eyebrow": "Schweizer trail-hydration",
-        "heading": "Eine Flasche. Ein Napf. Endlose Wege.",
-        "subhead": "Auslaufsicher, isoliert, 285 ml. Mit ausklappbarem Silikon-Napf, damit dein Hund unterwegs trinken kann — wo der Weg auch hinführt.",
-        "button_label_1": "Jetzt kaufen",
+        "image_alt": "Un chien boit dans le bol en silicone intégré à la gourde VentiSuisse",
+        "eyebrow": "Hydration de trail suisse",
+        "heading": "Une bouteille. Un bol. Des sentiers sans fin.",
+        "subhead": "Étanche, isotherme, 285 ml. Avec un bol en silicone qui s'ouvre — pour que votre chien puisse boire partout où le chemin mène.",
+        "button_label_1": "Acheter maintenant",
         "button_link_1": "shopify://collections/all",
-        "button_label_2": "So funktioniert's",
+        "button_label_2": "Comment ça marche",
         "button_link_2": "#how-it-works",
         "content_alignment": "bottom-left",
         "overlay_opacity": 40,
@@ -26,8 +26,8 @@
         "step-1": {
           "type": "column",
           "settings": {
-            "title": "1. Tragen",
-            "text": "<p>Leichte 150 g, kompakte 9 × 9 cm. Karabiner am Rucksack, in der Hand, in der Tasche.</p>",
+            "title": "1. Porter",
+            "text": "<p>Léger : 150 g. Compact : 9 × 9 cm. Mousqueton sur le sac, dans la main, dans la poche.</p>",
             "link_label": "",
             "link": ""
           }
@@ -35,8 +35,8 @@
         "step-2": {
           "type": "column",
           "settings": {
-            "title": "2. Öffnen",
-            "text": "<p>Daumendruck am Silikonpanel — und der eingebaute Trinknapf klappt nach unten.</p>",
+            "title": "2. Ouvrir",
+            "text": "<p>Une pression du pouce sur le panneau en silicone — le bol intégré bascule vers le bas, prêt pour votre chien.</p>",
             "link_label": "",
             "link": ""
           }
@@ -44,8 +44,8 @@
         "step-3": {
           "type": "column",
           "settings": {
-            "title": "3. Trinken",
-            "text": "<p>Wasser rein, dein Hund trinkt. Dann zurückklappen — wieder auslaufsicher.</p>",
+            "title": "3. Boire",
+            "text": "<p>L'eau coule, votre chien boit. Refermez le panneau — la bouteille est de nouveau étanche.</p>",
             "link_label": "",
             "link": ""
           }
@@ -57,7 +57,7 @@
         "step-3"
       ],
       "settings": {
-        "title": "So funktioniert's.",
+        "title": "Comment ça marche.",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -77,11 +77,11 @@
       "type": "vs-story",
       "settings": {
         "image_asset": "vs-product-folding.jpg",
-        "image_alt": "Hand öffnet das ausklappbare Silikonpanel des VentiSuisse-Flachons",
+        "image_alt": "Une main ouvre le panneau en silicone de la gourde VentiSuisse",
         "layout": "image-left",
-        "eyebrow": "Bowl on demand",
-        "heading": "Eine Bewegung — und der Napf ist da.",
-        "body": "<p>Das flexible Silikonpanel an der Seite der Flasche klappt mit einem Daumendruck nach unten. Wasser rein, dein Hund trinkt. Wenn ihr fertig seid, klappst du es zurück — die Flasche ist wieder dicht.</p><p>Keine zweite Flasche. Keine Klappschüssel. Keine triefenden Hände.</p>",
+        "eyebrow": "Bol à la demande",
+        "heading": "Un geste — et le bol est là.",
+        "body": "<p>Le panneau en silicone flexible sur le côté de la bouteille s'ouvre d'une pression du pouce. L'eau coule, votre chien boit. Quand vous avez terminé, vous refermez — la bouteille est de nouveau étanche.</p><p>Pas de deuxième bouteille. Pas de gamelle pliable. Pas de mains trempées.</p>",
         "button_label": "",
         "button_link": "",
         "color_scheme": "scheme-1",
@@ -134,11 +134,11 @@
       "type": "vs-story",
       "settings": {
         "image_asset": "vs-product-variants.jpg",
-        "image_alt": "Vier Farb- und Musterversionen des VentiSuisse-Flachons",
+        "image_alt": "Quatre versions de la gourde VentiSuisse — couleurs et motifs",
         "layout": "image-right",
-        "eyebrow": "Vier Stile",
-        "heading": "Solid, gemustert, immer Schweizer.",
-        "body": "<p>Sky Blue und Pink in den unifarbenen Versionen. Limitierte Bow-Tie-Muster für die, die's etwas verspielter mögen. Alle Versionen: gleiche 285 ml, gleicher Edelstahl-Innenraum, gleiches dichtes Flip-Top.</p>",
+        "eyebrow": "Quatre styles",
+        "heading": "Unis, à motifs, toujours suisses.",
+        "body": "<p>Sky Blue et Pink en versions unies. Motifs nœuds papillon en édition limitée pour ceux qui aiment un peu de fantaisie. Toutes les versions : mêmes 285 ml, même intérieur inox, même bouchon étanche.</p>",
         "button_label": "",
         "button_link": "",
         "color_scheme": "scheme-3",
@@ -153,7 +153,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>„Endlich eine Flasche, die für uns beide funktioniert. Mein Border Collie hat den Napf in 10 Sekunden begriffen.\"</p><p><em>— Lena, Bern</em></p>",
+            "text": "<p>« Enfin une bouteille qui marche pour nous deux. Mon border collie a compris le bol en 10 secondes. »</p><p><em>— Lena, Berne</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -162,7 +162,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>„Leichter als die Yeti, halb der Platzbedarf. Geht überall mit.\"</p><p><em>— Marco, Lugano</em></p>",
+            "text": "<p>« Plus légère que la Yeti, moitié moins encombrante. Elle nous suit partout. »</p><p><em>— Marco, Lugano</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -171,7 +171,7 @@
           "type": "column",
           "settings": {
             "title": "★★★★★",
-            "text": "<p>„Die pinke sieht lächerlich aus und ich liebe sie. Tropft nicht. Vier-Tage-Hike überstanden.\"</p><p><em>— Sophie, Lausanne</em></p>",
+            "text": "<p>« La rose est ridicule et je l'adore. Ne fuit pas. A survécu à une rando de quatre jours. »</p><p><em>— Sophie, Lausanne</em></p>",
             "link_label": "",
             "link": ""
           }
@@ -183,7 +183,7 @@
         "review-3"
       ],
       "settings": {
-        "title": "Von der Tour.",
+        "title": "Sur le terrain.",
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -205,14 +205,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Trail-getestete Updates, nur wenn wir etwas zu sagen haben.",
+            "heading": "Des nouvelles testées sur le trail, seulement quand on a quelque chose à dire.",
             "heading_size": "h2"
           }
         },
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Neue Farben, Restock-Alarm, gelegentliche Trail-Fotos. Kein Spam — versprochen.</p>"
+            "text": "<p>Nouvelles couleurs, alertes restock, photos de trail occasionnelles. Pas de spam — promis.</p>"
           }
         },
         "email_form": {

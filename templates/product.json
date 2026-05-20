@@ -6,7 +6,7 @@
         "eyebrow": {
           "type": "text",
           "settings": {
-            "text": "Swiss trail hydration",
+            "text": "Hydration de trail suisse",
             "text_style": "uppercase"
           }
         },
@@ -42,27 +42,27 @@
         "collapsible-materials": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials & care",
+            "heading": "Matériaux & entretien",
             "icon": "leather",
-            "content": "<p>Food-grade 304 stainless steel inside · BPA-free silicone bowl panel · powder-coated outer · hand-wash recommended.</p>",
+            "content": "<p>Intérieur en inox 304 (qualité alimentaire) · panneau en silicone sans BPA · extérieur peint en poudre · lavage à la main recommandé.</p>",
             "page": ""
           }
         },
         "collapsible-shipping": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & returns",
+            "heading": "Livraison & retours",
             "icon": "truck",
-            "content": "<p>Free shipping across Switzerland on orders over CHF 49 · flat CHF 6.50 below · 1–3 business days via Swiss Post · 30-day return promise (voluntary).</p>",
+            "content": "<p>Livraison gratuite en Suisse dès CHF 49 · forfait CHF 6.50 en dessous · 1–3 jours ouvrables via la Poste Suisse · retours sous 30 jours (geste commercial, sans question).</p>",
             "page": ""
           }
         },
         "collapsible-specs": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Specifications",
+            "heading": "Spécifications",
             "icon": "ruler",
-            "content": "<p>Capacity 285 ml · Dimensions 9 × 9 × 8.7 cm · Weight 150 g · Leak-proof flip-top with built-in silicone bowl · Insulated double-wall body.</p>",
+            "content": "<p>Contenance 285 ml · Dimensions 9 × 9 × 8,7 cm · Poids 150 g · Bouchon étanche avec bol intégré en silicone · Corps isotherme double paroi.</p>",
             "page": ""
           }
         },
@@ -71,14 +71,14 @@
           "settings": {
             "heading": "FAQ",
             "icon": "chat_bubble",
-            "content": "<p>Is the bowl food-safe? Yes — food-grade silicone, BPA-free.<br>Will it leak in my bag? No — the flip-top is fully sealed when closed.<br>Dishwasher safe? Top rack only.</p>",
+            "content": "<p>Le bol est-il alimentaire ? Oui — silicone de qualité alimentaire, sans BPA.<br>Est-ce qu'elle fuit dans le sac ? Non — le bouchon est totalement étanche une fois refermé.<br>Lavable au lave-vaisselle ? Panier supérieur uniquement.</p>",
             "page": ""
           }
         },
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Partager"
           }
         }
       },
@@ -120,8 +120,8 @@
         "feature-1": {
           "type": "column",
           "settings": {
-            "title": "Leak-proof",
-            "text": "<p>Flip-top seals completely. Toss it in any bag.</p>",
+            "title": "Étanche",
+            "text": "<p>Le bouchon se ferme hermétiquement. Glissez-la dans n'importe quel sac.</p>",
             "link_label": "",
             "link": ""
           }
@@ -129,8 +129,8 @@
         "feature-2": {
           "type": "column",
           "settings": {
-            "title": "Bowl + bottle",
-            "text": "<p>Silicone panel flips open into a built-in drinking bowl.</p>",
+            "title": "Bouteille + bol",
+            "text": "<p>Le panneau en silicone bascule pour former un bol intégré.</p>",
             "link_label": "",
             "link": ""
           }
@@ -138,8 +138,8 @@
         "feature-3": {
           "type": "column",
           "settings": {
-            "title": "Food-grade",
-            "text": "<p>304 stainless inside, BPA-free silicone outside.</p>",
+            "title": "Qualité alimentaire",
+            "text": "<p>Inox 304 à l'intérieur, silicone sans BPA à l'extérieur.</p>",
             "link_label": "",
             "link": ""
           }
@@ -147,8 +147,8 @@
         "feature-4": {
           "type": "column",
           "settings": {
-            "title": "Trail-light",
-            "text": "<p>150 g empty. 285 ml capacity. Built for the climb.</p>",
+            "title": "Léger pour le trail",
+            "text": "<p>150 g à vide. 285 ml de contenance. Conçu pour la montée.</p>",
             "link_label": "",
             "link": ""
           }
@@ -161,7 +161,7 @@
         "feature-4"
       ],
       "settings": {
-        "title": "Built for the trail.",
+        "title": "Conçue pour le trail.",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -183,14 +183,14 @@
         "image-with-text-heading": {
           "type": "heading",
           "settings": {
-            "heading": "Made for Alpine days.",
+            "heading": "Pour les journées dans les Alpes.",
             "heading_size": "h1"
           }
         },
         "image-with-text-body": {
           "type": "text",
           "settings": {
-            "text": "<p>Cool water on the climb. A bowl when your dog needs it. Designed in Switzerland for the trail-life — and the everyday park run too.</p>",
+            "text": "<p>De l'eau fraîche pour la montée. Un bol quand votre chien en a besoin. Conçue en Suisse pour la vie sur les sentiers — et le footing au parc aussi.</p>",
             "text_style": "body"
           }
         }
@@ -218,8 +218,8 @@
         "trust-1": {
           "type": "column",
           "settings": {
-            "title": "Free CH shipping over CHF 49",
-            "text": "<p>1–3 business days via Swiss Post.</p>",
+            "title": "Livraison gratuite dès CHF 49",
+            "text": "<p>1–3 jours ouvrables via la Poste Suisse.</p>",
             "link_label": "",
             "link": ""
           }
@@ -227,8 +227,8 @@
         "trust-2": {
           "type": "column",
           "settings": {
-            "title": "30-day return promise",
-            "text": "<p>Doesn't work for you? Send it back.</p>",
+            "title": "Retours sous 30 jours",
+            "text": "<p>Ça ne convient pas ? Renvoyez-la.</p>",
             "link_label": "",
             "link": ""
           }
@@ -236,8 +236,8 @@
         "trust-3": {
           "type": "column",
           "settings": {
-            "title": "Support in DE / FR / EN",
-            "text": "<p>Real humans, replies within 24h.</p>",
+            "title": "Support FR / DE / EN",
+            "text": "<p>De vraies personnes, réponse sous 24 h.</p>",
             "link_label": "",
             "link": ""
           }
