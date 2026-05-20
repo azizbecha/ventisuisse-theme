@@ -3,6 +3,9 @@
     "hero": {
       "type": "vs-hero",
       "settings": {
+        "background_type": "video",
+        "video_asset": "vs-hero-video.mp4",
+        "video_poster_asset": "vs-hero-video-poster.jpg",
         "image_asset": "vs-hero-corgi.jpg",
         "image_alt": "A corgi drinks from the VentiSuisse trail-flask's flip-out silicone bowl",
         "eyebrow": "Schweizer trail-hydration",
